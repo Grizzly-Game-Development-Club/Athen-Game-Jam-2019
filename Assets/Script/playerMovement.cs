@@ -16,13 +16,13 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
        //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxis ("Horizontal");
+        //float moveHorizontal = Input.GetAxis ("Horizontal");
 
         //Store the current vertical input in the float moveVertical.
-        float moveVertical = Input.GetAxis ("Vertical");
+        //float moveVertical = Input.GetAxis ("Vertical");
 
         //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+        //Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 
         if (Input.GetKeyDown(KeyCode.UpArrow)){
             rb2d.velocity = new Vector2(0.0f, speed * Time.deltaTime);
