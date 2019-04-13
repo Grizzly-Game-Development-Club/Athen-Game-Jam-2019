@@ -9,6 +9,6 @@ public class deathscreen : MonoBehaviour
     // gameover.setactive (true);
     //time.timescale = .25f;
     // Invoke("Reset", Reset.delay);
-
 }
+
 
