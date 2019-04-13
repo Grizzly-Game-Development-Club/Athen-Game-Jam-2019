@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class deathscreen : MonoBehaviour
 {
-   // void deathscreen ();
+    // void deathscreen ();
     //if (Char <1 ) {
     // gameover.setactive (true);
-   //time.timescale = .25f;
-   // Invoke("Reset", Reset.delay);
+    //time.timescale = .25f;
+    // Invoke("Reset", Reset.delay);
+}
 
 
