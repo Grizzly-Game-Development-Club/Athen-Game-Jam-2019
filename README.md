@@ -12,11 +12,11 @@
 2. **Mart Miller** - Scripter
 3. **Pil So** - Scripter
 4. **Jelan Wilkerson** - Scripter
-5. **Justin** - Scripter
+5. **Justin Sandman** - Scripter
 6. **Greatzel Unabia** - Art
 7. **Hannah So** - Art
 8. **Lydia Hopper** - Art
-9. **Chase** - Art
+9. **Chase Vincent** - Art
 10. **Zack Freeman** - Music
 11. **Miguel Romen III** - Scripter, Music, Design
 
