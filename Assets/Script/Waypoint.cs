@@ -7,6 +7,7 @@ public class Waypoint : MonoBehaviour
 {
     public int waypointId;
     public GameObject enemyPrefab;
+    public int enemySpawnSpeed;
     public float spawnLimit;
     public float timeBetweenSpawn;
     public List<GameObject> markerList;
@@ -60,6 +61,7 @@ public class Waypoint : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, firstPosition.transform.position, Quaternion.identity) as GameObject;
             enemy.GetComponent<EnemyController>().enemyWaypointID = this.waypointId;
             enemy.GetComponent<EnemyController>().currentIndex = 0;
+            enemy.GetComponent<EnemyController>().enemySpeed = enemySpawnSpeed;
             currentSpawnCount++;
 
             yield return new WaitForSeconds(timeBetweenSpawn);
