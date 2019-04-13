@@ -13,7 +13,7 @@
 3. **Pil So** - Scripter
 4. **Jelan Wilkerson** - Scripter
 5. **Justin** - Scripter
-6. **Greatzel Unabia ** - Art
+6. **Greatzel Unabia** - Art
 7. **Hannah So** - Art
 8. **Lydia Hopper** - Art
 9. **Chase** - Art
