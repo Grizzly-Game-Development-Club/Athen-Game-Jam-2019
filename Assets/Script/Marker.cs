@@ -26,7 +26,7 @@ public class Marker : MonoBehaviour
         if (waypointId == enemyWaypointID)
         {
             Debug.Log(other.name);
-            GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject);
+            GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject, other.gameObject);
             if (nextWaypoint != null)
             {
                 other.gameObject.GetComponent<EnemyController>().Move(nextWaypoint);

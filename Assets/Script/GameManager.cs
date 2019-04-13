@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject livePrefab;
     public GameObject liveHolder;
 
-    private int seconds;
-    private int minutes;
+    public int seconds;
+    public int minutes;
 
     public Text scoreText;
     public Text highscoreText;
