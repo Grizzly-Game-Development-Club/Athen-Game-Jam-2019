@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 
-public class lifePickup : MonoBehaviour
+public class LifePickUp : MonoBehaviour
 {
-    public liveManager liveManager;
+    public GameManager gameManager;
 
     private void Start()
     {
-        liveManager = GameObject.FindGameObjectWithTag("liveManager").GetComponent<liveManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            liveManager.addLive();
+            gameManager.addLive();
             Destroy(this.gameObject);
         }
     }
