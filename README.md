@@ -18,7 +18,7 @@
 8. **Lydia Hopper** - Art
 9. **Chase** - Art
 10. **Zack Freeman** - Music
-11. **Miguel Romen III ** - Scripter, Music, Design
+11. **Miguel Romen III** - Scripter, Music, Design
 
 ### ASSET LICENSING 
 All assets used in the game are licensed under https://unity3d.com/legal/as_terms 
