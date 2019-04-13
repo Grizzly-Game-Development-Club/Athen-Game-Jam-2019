@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
 
 
     }
-
+    /*
     public void Move(GameObject nextMarker)
     {
    float speed;
@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         Destroy(this.gameObject);
 
 
-    }
+    }*/
 
     public void Destory()
     {

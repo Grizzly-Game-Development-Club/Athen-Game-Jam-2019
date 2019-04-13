@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Waypoint : MonoBehaviour
-{
+{/*
     public int waypointId;
     public GameObject enemyPrefab;
     public List<GameObject> waypointList;
@@ -42,6 +43,7 @@ public class Waypoint : MonoBehaviour
         {
             return null;
         }
-
+        
     }
+    */
 }

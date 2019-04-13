@@ -16,7 +16,7 @@ public class Marker : MonoBehaviour
     {
         
     }
-
+/*
     private void OnTriggerEnter(Collider other)
     {
         int waypointId = GetComponentInParent<Waypoint>().waypointId;
@@ -34,5 +34,7 @@ public class Marker : MonoBehaviour
                 other.gameObject.GetComponent<EnemyController>().Despawn();
             }
         }
-    }
+    
+    } 
+    */
 }
