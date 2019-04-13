@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 moveVelocity;
     public int playerHealth;
-    public GameObject bulletPrefab;
+    //public Transform firePoint
     void Start()
     {
         rb2d = GetComponent <Rigidbody2D> ();
@@ -24,22 +24,22 @@ public class PlayerController : MonoBehaviour
        {
            Death();
        }
-       if (Input.GetKeyDown(KeyCode.F))
+       /* if (Input.GetKeyDown(KeyCode.F))
        {
            Fire();
-       }
+       } */
     }
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + moveVelocity * Time.fixedDeltaTime);
     }
 
-    void Fire()
+    /* void Fire()
     {
         
 
 
-    }
+    }*/
 
     void Death()
     {

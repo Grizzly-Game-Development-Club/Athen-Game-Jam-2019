@@ -355,6 +355,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
 --- !u!1 &642116847
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,11 +599,21 @@ RectTransform:
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492982488
+=======
+--- !u!1 &813460050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2077538889296877176, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
+    type: 3}
+  m_PrefabInstance: {fileID: 1672887706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &813460051
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
   m_GameObject: {fileID: 1492982486}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -653,6 +664,24 @@ CanvasRenderer:
   m_GameObject: {fileID: 1492982486}
   m_CullTransparentMesh: 0
 --- !u!1001 &1660614395
+=======
+  m_GameObject: {fileID: 813460050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac998e9897382c4ebf5af83aa778653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1008856591}
+  Lightning: {fileID: 8912519697118585828, guid: a14af777d76933649a554d047eed698e,
+    type: 3}
+--- !u!4 &1008856591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2077538889481428845, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
+    type: 3}
+  m_PrefabInstance: {fileID: 1672887706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1672887706
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -667,12 +696,20 @@ PrefabInstance:
     - target: {fileID: 2077538889296877060, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
       value: 0
+=======
+      value: 0.02
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2077538889296877060, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
       value: 0
+=======
+      value: -1.05
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2077538889296877060, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
         type: 3}
@@ -702,7 +739,11 @@ PrefabInstance:
     - target: {fileID: 2077538889296877060, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
       value: 1
+=======
+      value: 2
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2077538889296877060, guid: c1fdd9d3c4fb5fd47b969f2d352b2939,
         type: 3}
@@ -721,6 +762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1fdd9d3c4fb5fd47b969f2d352b2939, type: 3}
+<<<<<<< HEAD:Assets/Scenes/Level One.unity
 --- !u!1 &1752838191
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,3 +1039,5 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106298395}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> Miguel:Assets/Scenes/Level One Test.unity
