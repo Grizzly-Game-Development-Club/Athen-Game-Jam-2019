@@ -29,9 +29,20 @@ public class EnemyController : MonoBehaviour
 
     public void Move(GameObject nextMarker)
     {
+  public float speed;
+    public GameObject targetObject;
+    public Transform myGameObject;
+    private float minimumDistance;
 
-
+    void Update()
+    {
+        if (Vector3.Distance(myGameObject.transform.position, targetObject.transform.position) >= minimumDistance)
+            myGameObject.transform.position =
+                Vector3.MoveTowards(myGameObject.transform.position,
+                targetObject.transform.position, Time.deltaTime * speed);
     }
+
+}
 
     public void Despawn()
     {
