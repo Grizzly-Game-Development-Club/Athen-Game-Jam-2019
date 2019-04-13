@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public int enemyWaypointID;
     public int enemyHealth;
+    public int enemySpeed;
     
 
     // Start is called before the first frame update
@@ -29,23 +30,21 @@ public class EnemyController : MonoBehaviour
 
     public void Move(GameObject nextMarker)
     {
-  public float speed;
-    public GameObject targetObject;
-    public Transform myGameObject;
-    private float minimumDistance;
+   float speed;
+     GameObject targetObject;
+     Transform myGameObject;
+     float minimumDistance;
 
-    void Update()
-    {
-        if (Vector3.Distance(myGameObject.transform.position, targetObject.transform.position) >= minimumDistance)
+        if (Vector2.Distance(myGameObject.transform.position, targetObject.transform.position) >= minimumDistance)
             myGameObject.transform.position =
-                Vector3.MoveTowards(myGameObject.transform.position,
+                Vector2.MoveTowards(myGameObject.transform.position,
                 targetObject.transform.position, Time.deltaTime * speed);
-    }
 
-}
+    }
 
     public void Despawn()
     {
+        Destroy(this.gameObject);
 
 
     }
