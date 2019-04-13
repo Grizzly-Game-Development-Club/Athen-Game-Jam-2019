@@ -19,11 +19,10 @@ public class SettingsMenu : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("musicVolume", volume);
-        /*slider = GameObject.FindGameObjectWithTag("slider").GetComponent<Slider>();
-        if (slider.value = -30)
+        slider = GameObject.FindGameObjectWithTag("slider").GetComponent<Slider>();
+        if (slider.value == -30)
         {
-            Debug.Log("Slider is 0");
+            audioMixer.SetFloat("musicVolume", -80);
         }
-        */
     }
 }
