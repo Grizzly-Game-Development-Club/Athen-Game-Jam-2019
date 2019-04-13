@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
-    void OnMouseClick()
+   /* void OnMouseClick()
     {
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
-    }
+    } */
 }
