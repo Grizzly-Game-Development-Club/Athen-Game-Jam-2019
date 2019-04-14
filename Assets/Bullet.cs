@@ -29,9 +29,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Top Collider")
+        switch (BulletName)
         {
-            Destroy(this.gameObject);
+            case "Player":
+                if (other.name == "Top Collider")
+                {
+                    Destroy(this.gameObject);
+                }
+                break;
+            case "Enemy":
+                if (other.name == "Bottom Collider")
+                {
+                    Destroy(this.gameObject);
+                }
+                break;
+
         }
     }
 }
