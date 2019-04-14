@@ -786,6 +786,11 @@ PrefabInstance:
       propertyPath: secondToSpawn
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
+        type: 3}
+      propertyPath: enemySpawnSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775, type: 3}
 --- !u!1 &546884083
@@ -1097,6 +1102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220171548759735258, guid: c2c9173f690b2874cb18a0e143744f6c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 947305371674148253, guid: c2c9173f690b2874cb18a0e143744f6c,
         type: 3}
