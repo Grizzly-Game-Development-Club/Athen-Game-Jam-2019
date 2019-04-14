@@ -22,7 +22,6 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(enemyHealth);
         if (enemyHealth <= 0)
         {
             Destory();
@@ -57,6 +56,7 @@ public class EnemyController : MonoBehaviour
 
         while (currentPosition != targetPosition)
         {
+            Debug.Log("Test Move");
             Vector2 newPosition = Vector2.MoveTowards(transform.position, nextMarker.transform.position, enemySpeed * Time.deltaTime);
             transform.position = newPosition;
             currentPosition.position = newPosition;

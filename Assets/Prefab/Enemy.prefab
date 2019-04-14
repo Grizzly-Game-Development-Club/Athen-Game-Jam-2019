@@ -97,6 +97,7 @@ MonoBehaviour:
   enemyWaypointID: 0
   enemyHealth: 50
   enemySpeed: 5
+  enemyScore: 0
   currentIndex: 0
 --- !u!50 &1842510145508427020
 Rigidbody2D:
