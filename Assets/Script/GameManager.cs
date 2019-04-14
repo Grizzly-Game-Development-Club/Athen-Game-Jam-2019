@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = score.ToString("0000000000");
+        highscoreText.text = score.ToString("0000000000");
+
 
         minutes = (int)Time.timeSinceLevelLoad / 60;
 
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
             seconds = (int)Time.timeSinceLevelLoad;
         }
 
-        timeDurationText.text = minutes + ":" + seconds;
+        timeDurationText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
         if (Input.GetKeyDown(KeyCode.Escape))
             togglePause();

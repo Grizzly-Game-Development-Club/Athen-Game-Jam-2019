@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public int enemyWaypointID;
     public int enemyHealth;
     public int enemySpeed;
+    public int enemyScore;
     public int currentIndex;
 
     public Coroutine move;
@@ -21,7 +22,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(enemyHealth);
+        if (enemyHealth <= 0)
+        {
+            Destory();
+        }
     }
 
 
@@ -68,7 +73,7 @@ public class EnemyController : MonoBehaviour
 
     public void Destory()
     {
-
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().score += enemyScore;
         Destroy(this.gameObject);
     }
 

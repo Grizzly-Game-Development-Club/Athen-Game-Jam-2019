@@ -5,13 +5,20 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    
+    [Header("Spawner")]
     public int waypointId;
-    public GameObject enemyPrefab;
-    public int enemySpawnSpeed;
     public float spawnLimit;
     public float timeBetweenSpawn;
-    public List<GameObject> markerList;
 
+    [Header("Enemy Manipulation")]
+    public GameObject enemyPrefab;
+    public int enemyHealth;
+    public int enemySpeed;
+    public int enemyScore;
+
+    [Header("Marker")]
+    public List<GameObject> markerList;
     public GameObject childMarker;
 
     [Header("SpawnTime")]
@@ -33,8 +40,6 @@ public class Waypoint : MonoBehaviour
         }
 
         isSpawning = false;
-
-
 
     }
 
@@ -61,7 +66,9 @@ public class Waypoint : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, firstPosition.transform.position, Quaternion.identity) as GameObject;
             enemy.GetComponent<EnemyController>().enemyWaypointID = this.waypointId;
             enemy.GetComponent<EnemyController>().currentIndex = 0;
-            enemy.GetComponent<EnemyController>().enemySpeed = enemySpawnSpeed;
+            enemy.GetComponent<EnemyController>().enemyHealth = enemyHealth;
+            enemy.GetComponent<EnemyController>().enemySpeed = enemySpeed;
+            enemy.GetComponent<EnemyController>().enemyScore = enemyScore;
             currentSpawnCount++;
 
             yield return new WaitForSeconds(timeBetweenSpawn);

@@ -774,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
         type: 3}
       propertyPath: spawnLimit
-      value: 4
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
         type: 3}
@@ -784,12 +784,27 @@ PrefabInstance:
     - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
         type: 3}
       propertyPath: secondToSpawn
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
         type: 3}
       propertyPath: enemySpawnSpeed
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
+        type: 3}
+      propertyPath: enemyHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
+        type: 3}
+      propertyPath: enemySpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527015809493172024, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775,
+        type: 3}
+      propertyPath: enemyScore
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5cccbf0dcf7fb4788ccd5cf4ffc775, type: 3}
