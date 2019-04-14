@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             GameObject lastChild = liveHolder.transform.GetChild(liveHolder.transform.childCount - 1).gameObject;
             Destroy(lastChild);
         }
-        if (liveHolder.transform.childCount == 0)
+        if (liveHolder.transform.childCount == 1)
         {
             gameState = E_GameState.Defeat;
         }

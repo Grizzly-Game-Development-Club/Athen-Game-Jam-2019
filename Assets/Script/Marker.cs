@@ -9,6 +9,11 @@ public class Marker : MonoBehaviour
     public E_MarkerType markerType;
     public float WaitTime;
 
+    private void Start()
+    {
+        markerType = E_MarkerType.Straight;
+    }
+
     IEnumerator Move(GameObject enemy)
     {
         yield return new WaitForSeconds(WaitTime);
