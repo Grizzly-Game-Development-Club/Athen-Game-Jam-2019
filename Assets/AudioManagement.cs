@@ -6,6 +6,11 @@ public class AudioManagement : MonoBehaviour
 {
     [SerializeField] private static AudioManagement audioManagement;
 
+    public AudioSource backgroundMusic;
+
+    public AudioClip LevelOneMusic;
+    public AudioClip MainMenuMusic;
+
     public static AudioManagement Instance
     {
         get
@@ -29,6 +34,27 @@ public class AudioManagement : MonoBehaviour
         set
         {
             audioManagement = value;
+        }
+    }
+
+
+    public void ChangeBackground(string name)
+    {
+        switch (name)
+        {
+            case "Main Menu":
+                backgroundMusic.clip = MainMenuMusic;
+                backgroundMusic.loop = true;
+                backgroundMusic.Play();
+                break;
+            case "Level One":
+                backgroundMusic.clip = LevelOneMusic;
+                backgroundMusic.loop = true;
+                backgroundMusic.Play();
+                break;
+            case "None":
+                backgroundMusic.Stop();
+                break;
         }
     }
 
