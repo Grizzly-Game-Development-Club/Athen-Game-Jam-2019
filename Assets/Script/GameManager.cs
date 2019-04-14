@@ -27,11 +27,15 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Text highscoreText;
     public Text timeDurationText;
+
+    AudioManagement audioManagement;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        audioManagement = GameObject.Find("AudioSystem").GetComponent<AudioManagement>();
+
         isScrolling = true;
         gameState = E_GameState.Play;
     }
@@ -67,6 +71,7 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case E_GameState.Defeat:
+                audioManagement.ChangeBackground("None");
                 deathScreen.SetActive(true);
                 break;
             case E_GameState.Pause:

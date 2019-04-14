@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5961246116729643435}
   - component: {fileID: 8253147841702184190}
   - component: {fileID: 4708630725015874505}
-  - component: {fileID: 461598117590934140}
+  - component: {fileID: 2909334512487287048}
   m_Layer: 0
-  m_Name: Bullet1
+  m_Name: Bullet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1176895260882879658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.061290003, y: 0.061290003, z: 0.061290003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3efda752fa274e2479e4e3816cf20e02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 897ca9c6785e4284ca6e64c267d29030, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletName: Enemy
---- !u!61 &461598117590934140
+--- !u!61 &2909334512487287048
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,12 +133,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.06, y: 0.9}
+    oldSize: {x: 3.01, y: 6.82}
     newSize: {x: 2.63, y: 4.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.06, y: 0.9}
+  m_Size: {x: 3.01, y: 6.82}
   m_EdgeRadius: 0

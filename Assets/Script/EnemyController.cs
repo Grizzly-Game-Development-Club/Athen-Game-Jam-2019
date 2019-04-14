@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     public bool isFiring;
     public Coroutine fire;
     public Coroutine move;
+
+    public bool isBoss;
     
 
     // Start is called before the first frame update
@@ -103,6 +105,9 @@ public class EnemyController : MonoBehaviour
 
     public void Destory()
     {
+        if(isBoss)
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().gameState = E_GameState.Victory;
+
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().score += enemyScore;
         Destroy(this.gameObject);
     }
