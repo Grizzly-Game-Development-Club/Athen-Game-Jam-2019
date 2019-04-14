@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int playerHealth;
     public float speed;
+    public GameObject bulletPrefab;
+    public float bulletSpeed;
+    public float fireRate;
+
+    private float nextFire;
     private Rigidbody2D rb2d;
     private Vector2 moveVelocity;
-    public int playerHealth;
-    //public Transform firePoint
+    
+
+    public List<GameObject> fireList;
+
     void Start()
     {
         rb2d = GetComponent <Rigidbody2D> ();
@@ -24,22 +32,29 @@ public class PlayerController : MonoBehaviour
        {
            Death();
        }
-       /* if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.X))
        {
            Fire();
-       } */
+       }
     }
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + moveVelocity * Time.fixedDeltaTime);
     }
 
-    /* void Fire()
+    void Fire()
     {
-        
+        if (Time.time > nextFire) {
+            foreach (GameObject firepoint in fireList)
+            {
+                GameObject bullet = Instantiate(bulletPrefab) as GameObject;
+                bullet.transform.position = firepoint.transform.position;
+                bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * bulletSpeed;
+                nextFire = Time.time + fireRate;
+            }
+        }
 
-
-    }*/
+    }
 
     void Death()
     {

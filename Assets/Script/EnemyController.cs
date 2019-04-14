@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public int enemyWaypointID;
     public int enemyHealth;
     public int enemySpeed;
+    public int currentIndex;
 
     public Coroutine move;
     
@@ -51,7 +52,6 @@ public class EnemyController : MonoBehaviour
 
         while (currentPosition != targetPosition)
         {
-            Debug.Log(currentPosition.position + ":" + targetPosition.position);
             Vector2 newPosition = Vector2.MoveTowards(transform.position, nextMarker.transform.position, enemySpeed * Time.deltaTime);
             transform.position = newPosition;
             currentPosition.position = newPosition;

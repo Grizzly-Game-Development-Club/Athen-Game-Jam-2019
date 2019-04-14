@@ -19,21 +19,23 @@ public class Marker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        int waypointId = GetComponentInParent<Waypoint>().waypointId;
-        int enemyWaypointID = other.GetComponent<EnemyController>().enemyWaypointID;
+        if (other.tag == "Enemy") {
+            int waypointId = GetComponentInParent<Waypoint>().waypointId;
+            int enemyWaypointID = other.GetComponent<EnemyController>().enemyWaypointID;
 
-        
-        if (waypointId == enemyWaypointID)
-        {
-            Debug.Log(other.name);
-            GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject);
-            if (nextWaypoint != null)
+
+            if (waypointId == enemyWaypointID)
             {
-                other.gameObject.GetComponent<EnemyController>().Move(nextWaypoint);
-            }
-            else
-            {
-                other.gameObject.GetComponent<EnemyController>().Despawn();
+                Debug.Log(other.name);
+                GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject, other.gameObject);
+                if (nextWaypoint != null)
+                {
+                    other.gameObject.GetComponent<EnemyController>().Move(nextWaypoint);
+                }
+                else
+                {
+                    other.gameObject.GetComponent<EnemyController>().Despawn();
+                }
             }
         }
     

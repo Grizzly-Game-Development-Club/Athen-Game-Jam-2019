@@ -7,13 +7,18 @@ public class Waypoint : MonoBehaviour
 {
     public int waypointId;
     public GameObject enemyPrefab;
-    public float timeToSpawn;
+    public int enemySpawnSpeed;
     public float spawnLimit;
     public float timeBetweenSpawn;
     public List<GameObject> markerList;
 
     public GameObject childMarker;
 
+    [Header("SpawnTime")]
+    public int minuteToSpawn;
+    public int secondToSpawn;
+
+    public bool isSpawning;
 
     // Start is called before the first frame update
     void Start()
@@ -27,19 +32,25 @@ public class Waypoint : MonoBehaviour
             markerList.Add(marker.gameObject);
         }
 
-        StartCoroutine("Spawn_IE");
+        isSpawning = false;
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    void Spawn()
-    {
-        
-
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().seconds == secondToSpawn &&
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().minutes == minuteToSpawn)
+        {
+            if (!isSpawning) {
+                isSpawning = true;
+                StartCoroutine("Spawn_IE");            
+            }
+            
+        }
     }
 
     IEnumerator Spawn_IE()
@@ -49,6 +60,8 @@ public class Waypoint : MonoBehaviour
         while (currentSpawnCount != spawnLimit) {          
             GameObject enemy = Instantiate(enemyPrefab, firstPosition.transform.position, Quaternion.identity) as GameObject;
             enemy.GetComponent<EnemyController>().enemyWaypointID = this.waypointId;
+            enemy.GetComponent<EnemyController>().currentIndex = 0;
+            enemy.GetComponent<EnemyController>().enemySpeed = enemySpawnSpeed;
             currentSpawnCount++;
 
             yield return new WaitForSeconds(timeBetweenSpawn);
@@ -56,11 +69,12 @@ public class Waypoint : MonoBehaviour
     }
 
     //Get the next marker
-    public GameObject GetNextMarker(GameObject currentMarker)
+    public GameObject GetNextMarker(GameObject currentMarker, GameObject enemy)
     {
-        int index = markerList.IndexOf(currentMarker);
+        int index = enemy.GetComponent<EnemyController>().currentIndex;
         if (markerList.Count - 1 > index)
         {
+            enemy.GetComponent<EnemyController>().currentIndex += 1;
             return markerList[index + 1];
         }
         else
