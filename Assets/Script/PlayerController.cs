@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,9 +14,16 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
     private Rigidbody2D rb2d;
     private Vector2 moveVelocity;
-    
+
+    private AudioSource source;
+    public AudioClip shootSound;
 
     public List<GameObject> fireList;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -51,6 +59,8 @@ public class PlayerController : MonoBehaviour
                 bullet.transform.position = firepoint.transform.position;
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * bulletSpeed;
                 nextFire = Time.time + fireRate;
+                GameObject.Find("ShootSoundEffect");
+                source.PlayOneShot(shootSound, 1);
             }
         }
 
