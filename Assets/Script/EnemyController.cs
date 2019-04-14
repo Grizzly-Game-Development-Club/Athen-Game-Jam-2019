@@ -10,6 +10,14 @@ public class EnemyController : MonoBehaviour
     public int enemyScore;
     public int currentIndex;
 
+    public GameObject bulletPrefab;
+    public List<GameObject> fireList;
+    public float bulletSpeed;
+    public float fireRate;
+    private float nextFire;
+
+    public bool isFiring;
+    public Coroutine fire;
     public Coroutine move;
     
 
@@ -22,17 +30,40 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fire != null)
+            isFiring = true;
+        else
+            isFiring = false;
+
         if (enemyHealth <= 0)
         {
             Destory();
         }
     }
 
-
-    public void Attack()
+    public void Fire()
     {
+        if (fire == null)
+            fire = StartCoroutine("Fire_IE");
+    }
 
+    public void StopFire()
+    {
+        fire = null;
+    }
 
+    public IEnumerator Fire_IE()
+    {
+        while (true) {
+            foreach (GameObject firepoint in fireList)
+            {
+                GameObject bullet = Instantiate(bulletPrefab) as GameObject;
+                bullet.transform.position = firepoint.transform.position;
+                bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-1, 1), -1) * bulletSpeed;
+            }
+
+            yield return new WaitForSeconds(fireRate);
+        }
     }
 
     public void Move(GameObject nextMarker)
@@ -56,7 +87,6 @@ public class EnemyController : MonoBehaviour
 
         while (currentPosition != targetPosition)
         {
-            Debug.Log("Test Move");
             Vector2 newPosition = Vector2.MoveTowards(transform.position, nextMarker.transform.position, enemySpeed * Time.deltaTime);
             transform.position = newPosition;
             currentPosition.position = newPosition;

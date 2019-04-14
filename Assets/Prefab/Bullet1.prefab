@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1925488058115200385}
   - component: {fileID: 5961246116729643435}
-  - component: {fileID: 690800627928998316}
   - component: {fileID: 8253147841702184190}
   - component: {fileID: 4708630725015874505}
+  - component: {fileID: 461598117590934140}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 2d5e3f19ddf40bb45b8a90d02018f472, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3efda752fa274e2479e4e3816cf20e02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,32 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &690800627928998316
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176895260882879658}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.63, y: 4.88}
-    newSize: {x: 2.63, y: 4.88}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.63, y: 4.88}
-  m_EdgeRadius: 0
 --- !u!50 &8253147841702184190
 Rigidbody2D:
   serializedVersion: 4
@@ -141,4 +115,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1bcb1dd2bdcb14a9eda5a8efabf56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletName: Player
+  BulletName: Enemy
+--- !u!61 &461598117590934140
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176895260882879658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.06, y: 0.9}
+    newSize: {x: 2.63, y: 4.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.06, y: 0.9}
+  m_EdgeRadius: 0

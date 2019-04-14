@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum E_MarkerType {None, Straight, Stop}
+
 public class Marker : MonoBehaviour
 {
+    public E_MarkerType markerType;
+    public float WaitTime;
 
-    // Start is called before the first frame update
-    void Start()
+    IEnumerator Move(GameObject enemy)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        yield return new WaitForSeconds(WaitTime);
+        GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject, enemy.gameObject);
+        if (nextWaypoint != null)
+        {
+            enemy.gameObject.GetComponent<EnemyController>().Move(nextWaypoint);
+        }
+        else
+        {
+            enemy.gameObject.GetComponent<EnemyController>().Despawn();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Enemy") {
             
             int waypointId = GetComponentInParent<Waypoint>().waypointId;
@@ -28,16 +33,21 @@ public class Marker : MonoBehaviour
 
             if (waypointId == enemyWaypointID)
             {
+                switch (markerType)
+                {
+                    case E_MarkerType.Straight:
+                        other.GetComponent<EnemyController>().Fire();
+                        break;
+                    case E_MarkerType.None:
+                       
+                        break;
+                    case E_MarkerType.Stop:
+                        other.GetComponent<EnemyController>().StopFire();
+                        break;
+                }
+
+                StartCoroutine(Move(other.gameObject));              
                 
-                GameObject nextWaypoint = GetComponentInParent<Waypoint>().GetNextMarker(this.gameObject, other.gameObject);
-                if (nextWaypoint != null)
-                {
-                    other.gameObject.GetComponent<EnemyController>().Move(nextWaypoint);
-                }
-                else
-                {
-                    other.gameObject.GetComponent<EnemyController>().Despawn();
-                }
             }
         }
     

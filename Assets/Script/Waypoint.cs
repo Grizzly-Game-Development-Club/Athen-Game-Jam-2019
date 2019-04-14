@@ -25,6 +25,10 @@ public class Waypoint : MonoBehaviour
     public int minuteToSpawn;
     public int secondToSpawn;
 
+    [Header("Bullet")]
+    public int bulletSpeed;
+    public int fireRate;
+
     public bool isSpawning;
 
     // Start is called before the first frame update
@@ -69,6 +73,8 @@ public class Waypoint : MonoBehaviour
             enemy.GetComponent<EnemyController>().enemyHealth = enemyHealth;
             enemy.GetComponent<EnemyController>().enemySpeed = enemySpeed;
             enemy.GetComponent<EnemyController>().enemyScore = enemyScore;
+            enemy.GetComponent<EnemyController>().bulletSpeed = bulletSpeed;
+            enemy.GetComponent<EnemyController>().fireRate = fireRate;
             currentSpawnCount++;
 
             yield return new WaitForSeconds(timeBetweenSpawn);

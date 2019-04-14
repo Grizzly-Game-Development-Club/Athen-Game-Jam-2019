@@ -5,12 +5,25 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
+    public string BulletName;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
-        {
-            collision.GetComponent<EnemyController>().enemyHealth -= 10;
-            Destroy(this.gameObject);
+        switch (BulletName) {
+            case "Player":
+                if (collision.tag == "Enemy")
+                {
+                    collision.GetComponent<EnemyController>().enemyHealth -= 10;
+                    Destroy(this.gameObject);
+                }
+                break;
+            case "Enemy":
+                if (collision.tag == "Player")
+                {
+                    GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().removeLive();
+                    Destroy(this.gameObject);
+                }
+                break;
         }
     }
 

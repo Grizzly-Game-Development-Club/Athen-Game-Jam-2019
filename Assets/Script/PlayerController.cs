@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour
                 bullet.transform.position = firepoint.transform.position;
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * bulletSpeed;
                 nextFire = Time.time + fireRate;
-                GameObject.Find("ShootSoundEffect");
-                source.PlayOneShot(shootSound, 1);
+                
+                
             }
+            source.PlayOneShot(shootSound, 1);
         }
 
     }

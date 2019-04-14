@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void togglePause()
+    public void togglePause()
     {
         if (Time.timeScale == 0f)
         {
@@ -105,10 +105,14 @@ public class GameManager : MonoBehaviour
 
     public void removeLive()
     {
-        if (transform.childCount > 0)
+        if (liveHolder.transform.childCount > 0)
         {
-            GameObject lastChild = transform.GetChild(transform.childCount - 1).gameObject;
+            GameObject lastChild = liveHolder.transform.GetChild(liveHolder.transform.childCount - 1).gameObject;
             Destroy(lastChild);
+        }
+        if (liveHolder.transform.childCount == 0)
+        {
+            gameState = E_GameState.Defeat;
         }
     }
 
